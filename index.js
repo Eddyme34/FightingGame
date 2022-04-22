@@ -13,10 +13,10 @@ const background = new Sprite({
     x: 0,
     y: 0
   },
-  imageSrc: './img/background.png'
+  imageSrc: './img/finaldestination.jpg'
 })
 
-const shop = new Sprite({
+/*const shop = new Sprite({
   position: {
     x: 600,
     y: 128
@@ -24,12 +24,12 @@ const shop = new Sprite({
   imageSrc: './img/shop.png',
   scale: 2.75,
   framesMax: 6
-})
+})*/
 
 const player = new Fighter({
   position: {
-    x: 0,
-    y: 0
+    x: 200,
+    y: 100
   },
   velocity: {
     x: 0,
@@ -39,7 +39,7 @@ const player = new Fighter({
     x: 0,
     y: 0
   },
-  imageSrc: './img/samuraiMack/samuraiMack/Idle.png',
+  imageSrc: './img/samuraiMack/samuraiMack/PikachuIdle.png',
   framesMax: 8,
   scale: 2.5,
   offset: {
@@ -48,20 +48,20 @@ const player = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: './img/samuraiMack/samuraiMack/Idle.png',
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuIdle.png',
       framesMax: 8
     },
     run: {
-      imageSrc: './img/samuraiMack/samuraiMack/Run.png',
-      framesMax: 8
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuRun.png',
+      framesMax: 4
     },
     jump: {
-      imageSrc: './img/samuraiMack/samuraiMack/Jump.png',
-      framesMax: 2
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuJump.png',
+      framesMax: 1
     },
     fall: {
-      imageSrc: './img/samuraiMack/samuraiMack/Fall.png',
-      framesMax: 2
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuFall.png',
+      framesMax: 1
     },
     attack1: {
       imageSrc: './img/samuraiMack/samuraiMack/Attack1.png',
@@ -88,7 +88,7 @@ const player = new Fighter({
 
 const enemy = new Fighter({
   position: {
-    x: 400,
+    x: 750,
     y: 100
   },
   velocity: {
@@ -100,7 +100,7 @@ const enemy = new Fighter({
     x: -50,
     y: 0
   },
-  imageSrc: './img/kenji/Kenji/Idle.png',
+  imageSrc: './img/kenji/Kenji/HisokaIdle.png',
   framesMax: 4,
   scale: 2.5,
   offset: {
@@ -109,19 +109,19 @@ const enemy = new Fighter({
   },
   sprites: {
     idle: {
-      imageSrc: './img/kenji/kenji/Idle.png',
+      imageSrc: './img/kenji/kenji/HisokaIdle.png',
       framesMax: 4
     },
     run: {
-      imageSrc: './img/kenji/kenji/Run.png',
-      framesMax: 8
+      imageSrc: './img/kenji/kenji/HisokaRun.png',
+      framesMax: 6
     },
     jump: {
-      imageSrc: './img/kenji/kenji/Jump.png',
+      imageSrc: './img/kenji/kenji/HisokaJump.png',
       framesMax: 2
     },
     fall: {
-      imageSrc: './img/kenji/kenji/Fall.png',
+      imageSrc: './img/kenji/kenji/HisokaFall.png',
       framesMax: 2
     },
     attack1: {
@@ -171,7 +171,7 @@ function animate() {
   c.fillStyle = 'black'
   c.fillRect(0, 0, canvas.width, canvas.height)
   background.update()
-  shop.update()
+  //shop.update()
   c.fillStyle = 'rgba(255, 255, 255, 0.15)'
   c.fillRect(0, 0, canvas.width, canvas.height)
   player.update()
