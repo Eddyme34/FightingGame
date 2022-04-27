@@ -64,25 +64,25 @@ const player = new Fighter({
       framesMax: 1
     },
     attack1: {
-      imageSrc: './img/samuraiMack/samuraiMack/Attack1.png',
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuAttack1.png',
       framesMax: 6
     },
     takeHit: {
-      imageSrc: './img/samuraiMack/samuraiMack/Take Hit - white silhouette.png',
+      imageSrc: './img/samuraiMack/samuraiMack/Pikachu Take Hit.png',
       framesMax: 4
     },
     death: {
-      imageSrc: './img/samuraiMack/samuraiMack/Death.png',
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuDeath.png',
       framesMax: 6
     }
   },
   attackBox: {
     offset: {
-      x: 100,
-      y: 50
+      x: 50,
+      y: 90
     },
-    width: 160,
-    height: 50
+    width: 30,
+    height: 40
   }
 })
 
@@ -125,25 +125,25 @@ const enemy = new Fighter({
       framesMax: 2
     },
     attack1: {
-      imageSrc: './img/kenji/kenji/Attack1.png',
+      imageSrc: './img/kenji/kenji/HisokaAttack1.png',
       framesMax: 4
     },
     takeHit: {
-      imageSrc: './img/kenji/kenji/Take hit.png',
+      imageSrc: './img/kenji/kenji/Hisoka Take hit.png',
       framesMax: 3
     },
     death: {
-      imageSrc: './img/kenji/kenji/Death.png',
+      imageSrc: './img/kenji/kenji/HisokaDeath.png',
       framesMax: 7
     }
   },
   attackBox: {
     offset: {
-      x: -170,
+      x: -55,
       y: 50
     },
-    width: 170,
-    height: 50
+    width: 55,
+    height: 100
   }
 })
 
@@ -224,7 +224,8 @@ function animate() {
       rectangle2: enemy
     }) &&
     player.isAttacking &&
-    player.framesCurrent === 4
+    (player.framesCurrent === 3 ||
+     player.framesCurrent === 4)
   ) {
     enemy.takeHit()
     player.isAttacking = false
@@ -235,7 +236,7 @@ function animate() {
   }
 
   // if player misses
-  if (player.isAttacking && player.framesCurrent === 4) {
+  if (player.isAttacking && (player.framesCurrent === 3 || player.framesCurrent === 4)) {
     player.isAttacking = false
   }
 
@@ -246,7 +247,7 @@ function animate() {
       rectangle2: player
     }) &&
     enemy.isAttacking &&
-    enemy.framesCurrent === 2
+    enemy.framesCurrent === 3
   ) {
     player.takeHit()
     enemy.isAttacking = false
@@ -257,7 +258,7 @@ function animate() {
   }
 
   // if player misses
-  if (enemy.isAttacking && enemy.framesCurrent === 2) {
+  if (enemy.isAttacking && enemy.framesCurrent === 3) {
     enemy.isAttacking = false
   }
 
