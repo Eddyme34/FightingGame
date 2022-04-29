@@ -39,6 +39,7 @@ const player = new Fighter({
     x: 0,
     y: 0
   },
+  direction: 'right',
   imageSrc: './img/samuraiMack/samuraiMack/PikachuIdle.png',
   framesMax: 8,
   scale: 2.5,
@@ -47,31 +48,59 @@ const player = new Fighter({
     y: 157
   },
   sprites: {
-    idle: {
+    idleLeft: {
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuIdle2.png',
+      framesMax: 8
+    },
+    runLeft: {
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuRun2.png',
+      framesMax: 4
+    },
+    jumpLeft: {
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuJump2.png',
+      framesMax: 1
+    },
+    fallLeft: {
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuFall2.png',
+      framesMax: 1
+    },
+    attack1Left: {
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuAttack12.png',
+      framesMax: 6
+    },
+    takeHitLeft: {
+      imageSrc: './img/samuraiMack/samuraiMack/Pikachu Take Hit2.png',
+      framesMax: 4
+    },
+    deathLeft: {
+      imageSrc: './img/samuraiMack/samuraiMack/PikachuDeath2.png',
+      framesMax: 6
+    },
+    idleRight: {
       imageSrc: './img/samuraiMack/samuraiMack/PikachuIdle.png',
       framesMax: 8
     },
-    run: {
+    runRight: {
       imageSrc: './img/samuraiMack/samuraiMack/PikachuRun.png',
       framesMax: 4
     },
-    jump: {
+    jumpRight: {
       imageSrc: './img/samuraiMack/samuraiMack/PikachuJump.png',
       framesMax: 1
     },
-    fall: {
+    fallRight: {
       imageSrc: './img/samuraiMack/samuraiMack/PikachuFall.png',
       framesMax: 1
     },
-    attack1: {
+    attack1Right: {
       imageSrc: './img/samuraiMack/samuraiMack/PikachuAttack1.png',
       framesMax: 6
     },
-    takeHit: {
+    takeHitRight: {
       imageSrc: './img/samuraiMack/samuraiMack/Pikachu Take Hit.png',
       framesMax: 4
     },
-    death: {
+    deathRight: {
       imageSrc: './img/samuraiMack/samuraiMack/PikachuDeath.png',
       framesMax: 6
     }
@@ -100,6 +129,7 @@ const enemy = new Fighter({
     x: -50,
     y: 0
   },
+  direction: 'left',
   imageSrc: './img/kenji/Kenji/HisokaIdle.png',
   framesMax: 4,
   scale: 2.5,
@@ -108,32 +138,60 @@ const enemy = new Fighter({
     y: 167
   },
   sprites: {
-    idle: {
+    idleLeft: {
       imageSrc: './img/kenji/kenji/HisokaIdle.png',
       framesMax: 4
     },
-    run: {
+    runLeft: {
       imageSrc: './img/kenji/kenji/HisokaRun.png',
       framesMax: 6
     },
-    jump: {
+    jumpLeft: {
       imageSrc: './img/kenji/kenji/HisokaJump.png',
       framesMax: 2
     },
-    fall: {
+    fallLeft: {
       imageSrc: './img/kenji/kenji/HisokaFall.png',
       framesMax: 2
     },
-    attack1: {
+    attack1Left: {
       imageSrc: './img/kenji/kenji/HisokaAttack1.png',
       framesMax: 4
     },
-    takeHit: {
+    takeHitLeft: {
       imageSrc: './img/kenji/kenji/Hisoka Take hit.png',
       framesMax: 3
     },
-    death: {
+    deathLeft: {
       imageSrc: './img/kenji/kenji/HisokaDeath.png',
+      framesMax: 7
+    },
+    idleRight: {
+      imageSrc: './img/kenji/kenji/HisokaIdle2.png',
+      framesMax: 4
+    },
+    runRight: {
+      imageSrc: './img/kenji/kenji/HisokaRun2.png',
+      framesMax: 6
+    },
+    jumpRight: {
+      imageSrc: './img/kenji/kenji/HisokaJump2.png',
+      framesMax: 2
+    },
+    fallRight: {
+      imageSrc: './img/kenji/kenji/HisokaFall2.png',
+      framesMax: 2
+    },
+    attack1Right: {
+      imageSrc: './img/kenji/kenji/HisokaAttack12.png',
+      framesMax: 4
+    },
+    takeHitRight: {
+      imageSrc: './img/kenji/kenji/Hisoka Take hit2.png',
+      framesMax: 3
+    },
+    deathRight: {
+      imageSrc: './img/kenji/kenji/HisokaDeath2.png',
       framesMax: 7
     }
   },
@@ -247,7 +305,7 @@ function animate() {
       rectangle2: player
     }) &&
     enemy.isAttacking &&
-    enemy.framesCurrent === 3
+    enemy.framesCurrent === 2
   ) {
     player.takeHit()
     enemy.isAttacking = false
@@ -258,7 +316,7 @@ function animate() {
   }
 
   // if player misses
-  if (enemy.isAttacking && enemy.framesCurrent === 3) {
+  if (enemy.isAttacking && enemy.framesCurrent === 2) {
     enemy.isAttacking = false
   }
 
@@ -275,14 +333,18 @@ window.addEventListener('keydown', (event) => {
     switch (event.key) {
       case 'd':
         keys.d.pressed = true
+        player.direction = 'right'
         player.lastKey = 'd'
         break
       case 'a':
         keys.a.pressed = true
+        player.direction = 'left'
         player.lastKey = 'a'
         break
       case 'w':
-        player.velocity.y = -20
+        if(player.velocity.y === 0){
+          player.velocity.y = -20
+        }
         break
       case ' ':
         player.attack()
@@ -294,14 +356,18 @@ window.addEventListener('keydown', (event) => {
     switch (event.key) {
       case 'ArrowRight':
         keys.ArrowRight.pressed = true
+        enemy.direction = 'right'
         enemy.lastKey = 'ArrowRight'
         break
       case 'ArrowLeft':
         keys.ArrowLeft.pressed = true
+        enemy.direction = 'left'
         enemy.lastKey = 'ArrowLeft'
         break
       case 'ArrowUp':
-        enemy.velocity.y = -20
+        if (enemy.velocity.y === 0) {
+          enemy.velocity.y = -20
+        }
         break
       case 'ArrowDown':
         enemy.attack()
