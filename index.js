@@ -40,7 +40,7 @@ const player = new Fighter({
     y: 0
   },
   direction: 'right',
-  imageSrc: './img/samuraiMack/samuraiMack/PikachuIdle.png',
+  imageSrc: './img/pikachu/PikachuIdle.png',
   framesMax: 8,
   scale: 2.5,
   offset: {
@@ -49,64 +49,68 @@ const player = new Fighter({
   },
   sprites: {
     idleLeft: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuIdle2.png',
+      imageSrc: './img/pikachu/PikachuIdle2.png',
       framesMax: 8
     },
     runLeft: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuRun2.png',
+      imageSrc: './img/pikachu/PikachuRun2.png',
       framesMax: 4
     },
     jumpLeft: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuJump2.png',
+      imageSrc: './img/pikachu/PikachuJump2.png',
       framesMax: 1
     },
     fallLeft: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuFall2.png',
+      imageSrc: './img/pikachu/PikachuFall2.png',
       framesMax: 1
     },
     attack1Left: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuAttack12.png',
+      imageSrc: './img/pikachu/PikachuAttack12.png',
       framesMax: 6
     },
     takeHitLeft: {
-      imageSrc: './img/samuraiMack/samuraiMack/Pikachu Take Hit2.png',
+      imageSrc: './img/pikachu/Pikachu Take Hit2.png',
       framesMax: 4
     },
     deathLeft: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuDeath2.png',
+      imageSrc: './img/pikachu/PikachuDeath2.png',
       framesMax: 6
     },
     idleRight: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuIdle.png',
+      imageSrc: './img/pikachu/PikachuIdle.png',
       framesMax: 8
     },
     runRight: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuRun.png',
+      imageSrc: './img/pikachu/PikachuRun.png',
       framesMax: 4
     },
     jumpRight: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuJump.png',
+      imageSrc: './img/pikachu/PikachuJump.png',
       framesMax: 1
     },
     fallRight: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuFall.png',
+      imageSrc: './img/pikachu/PikachuFall.png',
       framesMax: 1
     },
     attack1Right: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuAttack1.png',
+      imageSrc: './img/pikachu/PikachuAttack1.png',
       framesMax: 6
     },
     takeHitRight: {
-      imageSrc: './img/samuraiMack/samuraiMack/Pikachu Take Hit.png',
+      imageSrc: './img/pikachu/Pikachu Take Hit.png',
       framesMax: 4
     },
     deathRight: {
-      imageSrc: './img/samuraiMack/samuraiMack/PikachuDeath.png',
+      imageSrc: './img/pikachu/PikachuDeath.png',
       framesMax: 6
     }
   },
   attackBox: {
-    offset: {
+    offsetleft: {
+      x: -30,
+      y: 90
+    },
+    offsetright: {
       x: 50,
       y: 90
     },
@@ -130,7 +134,7 @@ const enemy = new Fighter({
     y: 0
   },
   direction: 'left',
-  imageSrc: './img/kenji/Kenji/HisokaIdle.png',
+  imageSrc: './img/hisoka/HisokaIdle.png',
   framesMax: 4,
   scale: 2.5,
   offset: {
@@ -139,65 +143,69 @@ const enemy = new Fighter({
   },
   sprites: {
     idleLeft: {
-      imageSrc: './img/kenji/kenji/HisokaIdle.png',
+      imageSrc: './img/hisoka/HisokaIdle.png',
       framesMax: 4
     },
     runLeft: {
-      imageSrc: './img/kenji/kenji/HisokaRun.png',
+      imageSrc: './img/hisoka/HisokaRun.png',
       framesMax: 6
     },
     jumpLeft: {
-      imageSrc: './img/kenji/kenji/HisokaJump.png',
+      imageSrc: './img/hisoka/HisokaJump.png',
       framesMax: 2
     },
     fallLeft: {
-      imageSrc: './img/kenji/kenji/HisokaFall.png',
+      imageSrc: './img/hisoka/HisokaFall.png',
       framesMax: 2
     },
     attack1Left: {
-      imageSrc: './img/kenji/kenji/HisokaAttack1.png',
+      imageSrc: './img/hisoka/HisokaAttack1.png',
       framesMax: 4
     },
     takeHitLeft: {
-      imageSrc: './img/kenji/kenji/Hisoka Take hit.png',
+      imageSrc: './img/hisoka/Hisoka Take hit.png',
       framesMax: 3
     },
     deathLeft: {
-      imageSrc: './img/kenji/kenji/HisokaDeath.png',
+      imageSrc: './img/hisoka/HisokaDeath.png',
       framesMax: 7
     },
     idleRight: {
-      imageSrc: './img/kenji/kenji/HisokaIdle2.png',
+      imageSrc: './img/hisoka/HisokaIdle2.png',
       framesMax: 4
     },
     runRight: {
-      imageSrc: './img/kenji/kenji/HisokaRun2.png',
+      imageSrc: './img/hisoka/HisokaRun2.png',
       framesMax: 6
     },
     jumpRight: {
-      imageSrc: './img/kenji/kenji/HisokaJump2.png',
+      imageSrc: './img/hisoka/HisokaJump2.png',
       framesMax: 2
     },
     fallRight: {
-      imageSrc: './img/kenji/kenji/HisokaFall2.png',
+      imageSrc: './img/hisoka/HisokaFall2.png',
       framesMax: 2
     },
     attack1Right: {
-      imageSrc: './img/kenji/kenji/HisokaAttack12.png',
+      imageSrc: './img/hisoka/HisokaAttack12.png',
       framesMax: 4
     },
     takeHitRight: {
-      imageSrc: './img/kenji/kenji/Hisoka Take hit2.png',
+      imageSrc: './img/hisoka/Hisoka Take hit2.png',
       framesMax: 3
     },
     deathRight: {
-      imageSrc: './img/kenji/kenji/HisokaDeath2.png',
+      imageSrc: './img/hisoka/HisokaDeath2.png',
       framesMax: 7
     }
   },
   attackBox: {
-    offset: {
+    offsetleft: {
       x: -55,
+      y: 50
+    },
+    offsetright: {
+      x: 105,
       y: 50
     },
     width: 55,
@@ -329,7 +337,7 @@ function animate() {
 animate()
 
 window.addEventListener('keydown', (event) => {
-  if (!player.dead) {
+  if (!player.dead && !enemy.dead) {
     switch (event.key) {
       case 'd':
         keys.d.pressed = true
@@ -343,36 +351,30 @@ window.addEventListener('keydown', (event) => {
         break
       case 'w':
         if(player.velocity.y === 0){
-          player.velocity.y = -20
+          player.velocity.y = -15
         }
         break
-      case ' ':
+      case 'j':
         player.attack()
         break
-    }
-  }
-
-  if (!enemy.dead) {
-    switch (event.key) {
-      case 'ArrowRight':
-        keys.ArrowRight.pressed = true
-        enemy.direction = 'right'
-        enemy.lastKey = 'ArrowRight'
-        break
-      case 'ArrowLeft':
-        keys.ArrowLeft.pressed = true
-        enemy.direction = 'left'
-        enemy.lastKey = 'ArrowLeft'
-        break
-      case 'ArrowUp':
-        if (enemy.velocity.y === 0) {
-          enemy.velocity.y = -20
-        }
-        break
-      case 'ArrowDown':
-        enemy.attack()
-
-        break
+        case 'ArrowRight':
+          keys.ArrowRight.pressed = true
+          enemy.direction = 'right'
+          enemy.lastKey = 'ArrowRight'
+          break
+        case 'ArrowLeft':
+          keys.ArrowLeft.pressed = true
+          enemy.direction = 'left'
+          enemy.lastKey = 'ArrowLeft'
+          break
+        case 'ArrowUp':
+          if (enemy.velocity.y === 0) {
+            enemy.velocity.y = -15
+          }
+          break
+        case '0':
+          enemy.attack()
+          break
     }
   }
 })

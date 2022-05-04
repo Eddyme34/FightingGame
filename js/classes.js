@@ -62,7 +62,7 @@ class Sprite {
       offset = { x: 0, y: 0 },
       direction = 'right',
       sprites,
-      attackBox = { offset: {}, width: undefined, height: undefined }
+      attackBox = { offsetleft: {}, offsetright: {}, width: undefined, height: undefined }
     }) {
       super({
         position,
@@ -82,7 +82,8 @@ class Sprite {
           x: this.position.x,
           y: this.position.y
         },
-        offset: attackBox.offset,
+        offsetleft: attackBox.offsetleft,
+        offsetright: attackBox.offsetright,
         width: attackBox.width,
         height: attackBox.height
       }
@@ -106,13 +107,19 @@ class Sprite {
       if (!this.dead) this.animateFrames()
   
       // attack boxes
-      this.attackBox.position.x = this.position.x + this.attackBox.offset.x
-      this.attackBox.position.y = this.position.y + this.attackBox.offset.y
+      if(this.direction === 'left'){
+        this.attackBox.position.x = this.position.x + this.attackBox.offsetleft.x
+        this.attackBox.position.y = this.position.y + this.attackBox.offsetleft.y
+      }
+      else {
+        this.attackBox.position.x = this.position.x + this.attackBox.offsetright.x
+        this.attackBox.position.y = this.position.y + this.attackBox.offsetright.y
+      }
   
       // draw the attack box
       // c.fillRect(
-      //   this.attackBox.position.x,
-      //   this.attackBox.position.y,
+       //  this.attackBox.position.x,
+       //  this.attackBox.position.y,
       //   this.attackBox.width,
       //   this.attackBox.height
       // )
