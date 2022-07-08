@@ -4,6 +4,7 @@ https://capable-cranachan-119129.netlify.app/
 
 Controls:
 
+
 Player 1: Pikachu (Pokemon)
 
 Move Left: A
@@ -13,6 +14,7 @@ Move Right: D
 Jump: W
 
 Attack: J
+
 
 Player 2: Hisoka (Hunter X Hunter)
 
